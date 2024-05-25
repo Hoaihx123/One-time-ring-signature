@@ -1,5 +1,5 @@
-from rver import rver
-from trace import trace
+from protocols.rver import rver
+from protocols.trace import trace
 from datetime import datetime
 
 class RingSignature():
@@ -8,7 +8,7 @@ class RingSignature():
         self.n = 0
         self.signatures = [] #сохранение старых подписи
         self.messages = []
-    def add_client(self, p_key):
+    def add_member(self, p_key):
         self.p_keys.append(p_key)
         self.n += 1
     def check(self, r, x, m):
